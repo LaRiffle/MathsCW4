@@ -1,0 +1,13 @@
+function U = wPCA(data)
+
+X = data
+
+% first compute the eigenvalues of the covariance of the data.
+
+X = data';
+    means = mean(X,2);
+    meanX = repmat(means,1,size(data,1));
+    X_cent = X-meanX;
+    [V,E] = eig(X_cent'*X_cent);
+    U = X*V*E^(-0.5);
+end

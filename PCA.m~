@@ -1,0 +1,8 @@
+function U = PCA(data)
+    % built in pca method takes U from SVD decomposition of the
+    % variance matrix of the data
+    X = data;
+    [V,D] = eig(X'*X);
+    U = X*V*
+    
+end
